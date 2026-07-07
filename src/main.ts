@@ -1,4 +1,5 @@
 import "./style.css";
+import { inject } from "@vercel/analytics";
 import vertexSource from "./shaders/fullscreen.vert.glsl?raw";
 import fragmentSource from "./shaders/sunset.frag.glsl?raw";
 
@@ -208,5 +209,9 @@ function main(): void {
   }
   requestAnimationFrame(frame);
 }
+
+// Vercel Web Analytics. This vanilla Vite app uses the framework-agnostic
+// inject(); it is a no-op in local dev and only reports once deployed.
+inject();
 
 main();
