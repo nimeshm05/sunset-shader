@@ -1,0 +1,30 @@
+:root {
+  --canvas-background: #000000;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--canvas-background);
+}
+
+.sky-canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  /* The shader supplies every pixel; keep the element itself inert. */
+  user-select: none;
+  touch-action: none;
+}
+
+.grabbable {
+  cursor: grab;
+}
+
+.grabbable.grabbing {
+  cursor: grabbing;
+}
